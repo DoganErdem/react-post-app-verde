@@ -1,0 +1,8 @@
+.postHeader{
+    @apply flex flex-row w-full items-center h-8;
+}
+
+.button{
+    @apply flex relative  text-white font-semibold items-center justify-center px-2 py-1 rounded-lg
+    hover:ease-in hover:duration-150 ;
+}

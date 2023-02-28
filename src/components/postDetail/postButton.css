@@ -1,0 +1,3 @@
+.buttons{
+    @apply flex flex-row p-1 px-2 gap-1 rounded-lg justify-center items-center font-semibold text-white hover:duration-100;
+}

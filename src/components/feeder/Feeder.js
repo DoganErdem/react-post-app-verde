@@ -1,23 +1,27 @@
-import React, { useEffect, useState } from 'react';
-import Cart from './Cart';
+import React, { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import {StorePostAction} from '../../store/actions/StorePostAction';
+import Cart from './cart/Cart';
 import "./feeder.css";
 
-function Feeder() {
-
-    const [list, setList] = useState([]);
-
+const Feeder =()=> {
+    const postList = useSelector(state => state.posts.posts);
+    const dispatch = useDispatch();
+    
     useEffect(()=>{
-            fetch('https://jsonplaceholder.typicode.com/posts?userId=1')
+        console.log("aasdasdasasd")
+      if(postList.length == 0){
+         fetch('https://jsonplaceholder.typicode.com/posts?userId=1')
             .then(response => response.json())
-            .then(json => setList(json))
-      },[]) 
-
-    console.log(list); 
+            .then(json => dispatch(StorePostAction(json)))
+      }
+           
+      }, []) 
 
     return (
         <div className='feeder'>
-            {list.map((item,index)=> (
-                <Cart item={item} index={index}/>
+            {postList.map((item,index)=> (
+                <Cart item={item} key={index} />
             ))}
         </div>
     );
