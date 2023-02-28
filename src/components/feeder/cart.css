@@ -1,0 +1,11 @@
+.cart{
+    @apply flex flex-col p-4 w-64 h-72 gap-2;
+}
+
+.title{
+    @apply flex w-full font-bold;
+}
+
+.text{
+    @apply flex w-full text-sm;
+}

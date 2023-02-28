@@ -1,0 +1,4 @@
+.feeder{
+    @apply flex flex-wrap mt-10 rounded bg-white w-full p-4;
+}
+
